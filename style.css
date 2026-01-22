@@ -1,0 +1,238 @@
+/* ---------- GLOBAL ---------- */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    min-height: 100vh;
+    background-color: #f4f6fb;
+   
+}
+
+/* ---------- NAVBAR ---------- */
+.navbar {
+    background-color: cornsilk;
+    padding: 14px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.navbar h2 {
+    margin: 0;
+    color: #2563eb;
+}
+
+.logout {
+    color: #ef4444;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+/* ---------- CONTAINER ---------- */
+.container {
+    padding: 30px 20px;
+     background: url("./solo_travel_top-image.webp") no-repeat center center/cover;
+  
+}
+.cont{
+    padding: 30px 20px;
+     background: url("./pexels-serhattugg-14680948.jpg") no-repeat center center/cover;
+     
+
+}
+
+
+/* ---------- CARDS ---------- */
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 14px;
+    max-width: 520px;
+    margin: 30px auto;
+    background-color: bisque;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+      margin-left: 70px; 
+}
+
+/* ---------- FORM ---------- */
+label {
+    font-weight: 600;
+    color: #374151;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 16px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    font-size: 15px;
+}
+
+/* ---------- BUTTON ---------- */
+button {
+    background: #1f325a;
+    color: white;
+    border: none;
+    padding: 14px;
+    width: 100%;
+    border-radius: 10px;
+    font-size: 16px;
+    
+}
+
+button:hover {
+    background: #798ab9;
+}
+
+/* ---------- DAY CARDS ---------- */
+.day-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+}
+
+.day-card {
+    background: #f9fafb;
+    padding: 16px;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    background-color: bisque;
+}
+
+/* ---------- BADGES ---------- */
+.badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    color: white;
+}       
+
+.green { background: #16a34a; }
+.yellow { background: #ca8a04; }
+.red { background: #dc2626; }
+
+
+
+
+/* ---------- MAP ---------- */
+.map-box {
+    background: #f3f4f6;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    color: #374151;
+    background-color: bisque;
+}
+.night-mode {
+    background: #0f172a;
+    color: #e5e7eb;
+}
+
+.night-mode .navbar,
+.night-mode .map-box,
+.night-mode .day-card,
+
+.night-mode .lab,
+.night-mode .card {
+    background: #020617;
+    color: #e5e7eb;
+}
+.hero {
+    height: 260px;
+    background: url("./cold-snow-dawn-618833.jpg") no-repeat center center/cover;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 40px;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 18px;
+    opacity: 0.9;
+    
+}
+.fo{
+    justify-self: center;
+    padding-top: 150px;
+}
+
+
+/* ---------- WELCOME PAGE ---------- */
+
+.welcome-body {
+    height: 100vh;
+   /* background: #0f172a; /* clean dark */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(17, 17, 17);
+    background: url("./515e66e8a7a39c8fde7a0926f6301ea9.jpg");
+}
+
+.welcome-container {
+    text-align: center;
+}
+
+/* Slide animation */
+.slide-text {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: slideUp 1s ease forwards;
+}
+
+.slide-text.delay1 {
+    animation-delay: 0.5s;
+}
+.slide-text.delay2 {
+    animation-delay: 0.9s;
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}    
+
+/* Fade buttons */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 1.2s;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    margin: 20px 10px 0;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.btn.outline {
+    background: transparent;
+    border: 2px solid #2563eb;
+}
+.conti{
+    background: linear-gradient(to right, #74ebd5, #9face6);
+}
