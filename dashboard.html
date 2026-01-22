@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<script>
+function toggleMode() {
+    document.body.classList.toggle("night-mode");
+}
+</script>
+
+
+<div class="navbar">
+    <h1 style="font-style: oblique; color:rgb(10, 121, 121)">🌍 AI Trip Planner</h1>
+    <div>
+        <span  style="font-style: oblique;font-size:25px; color:rgb(10, 121, 121)" >Welcome, {{ username }}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="/logout" class="logout">Logout</a>
+    </div>
+    <button onclick="toggleMode()" style="width:auto;">🌙</button>
+</div>
+<div class="hero">
+    <h1>Plan Your Perfect Trip</h1>
+    <p>Smart travel planning made simple</p>
+</div>
+
+<div class="container">
+    <div class="card">
+        <h2>Plan Your Trip</h2>
+
+        <form method="post">
+            <label class="lab">💰 Budget (₹)</label>
+            <input type="number" name="budget" required>
+
+            <label class="lab">📅 Number of Days</label>
+            <input type="number" name="days" required>
+
+            <label class="lab">🎯 Travel Interest</label>
+            <select name="interest">
+                <option value="nature">Nature & Hills</option>
+                <option value="beach">Beach & Relax</option>
+                <option value="city">City & Shopping</option>
+            </select>
+            <label class="lab">Travel Area</label>
+                <select name="area">
+                    <option value="urban">Urban / City</option>
+                    <option value="rural">Rural / Low Connectivity</option>
+                </select>
+
+            <label class="lab">Preferred Crowd Level</label>
+                <select name="crowd">
+                    <option value="low">Low Crowd</option>
+                    <option value="medium">Medium Crowd</option>
+                    <option value="high">High Crowd</option>
+                </select>
+            <button type="submit">✨ Generate Trip Plan</button>
+        </form>
+        <p style="text-align:center;">
+    <a href="/history">📜 View Trip History</a>
+</p>
+
+
+    </div>
+    <span>{% if username == 'admin' %}
+<div style="margin-top: 20px; text-align:center;">
+    <button onclick="window.location.href='/admin_history'" 
+            style="padding:10px 20px; background-color:#333; color:#fff; border:none; border-radius:5px; cursor:pointer;">
+        View All Users & Trips
+    </button>
+</div>
+{% endif %}</span>
+</div>
+
+</body>
+</html>

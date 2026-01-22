@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Trip Planner</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<script>
+function toggleMode() {
+    document.body.classList.toggle("night-mode");
+}
+</script>
+<div class="container">
+    <h1>🌍 AI Trip Planner</h1>
+
+    <div style="text-align:center; margin-bottom:15px;">
+        <a href="/login">Login</a> |
+        <a href="/register">Register</a>
+    </div>
+
+    <p style="text-align:center;">Plan your perfect trip using AI</p>
+
+    <form method="post">
+        <label>Budget (₹)</label>
+        <input type="number" name="budget" required>
+
+        <label>Number of Days</label>
+        <input type="number" name="days" required>
+
+        <label>Travel Interest</label>
+        <select name="interest">
+            <option value="nature">Nature & Hills</option>
+            <option value="beach">Beach & Relax</option>
+            <option value="city">City & Shopping</option>
+        </select>
+
+        <button type="submit">✨ Generate Trip Plan</button>
+    </form>
+
+   
+</div>
+
+</body>
+</html>

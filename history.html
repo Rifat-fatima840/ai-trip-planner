@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trip History</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <script>
+function toggleMode() {
+    document.body.classList.toggle("night-mode");
+}
+</script>
+
+
+<div class="navbar">
+    <h2>📜 Trip History</h2>
+    <a href="/dashboard">Back</a>
+    <button onclick="toggleMode()" style="width:auto;">🌙</button>
+</div>
+
+<div class="container">
+    {% for trip in trips %}
+    <div class="card">
+        <p><b>Destination:</b> {{ trip[0] }}</p>
+        <p><b>Budget:</b> ₹{{ trip[1] }}</p>
+        <p><b>Days:</b> {{ trip[2] }}</p>
+        <p><b>Hotel:</b> {{ trip[3] }}</p>
+    </div>
+    {% endfor %}
+</div>
+
+</body>
+</html>

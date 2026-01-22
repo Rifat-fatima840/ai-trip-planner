@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trip Result</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <script>
+function toggleMode() {
+    document.body.classList.toggle("night-mode");
+}
+</script>
+
+
+<div class="navbar">
+    <h1 style="color:rgb(87, 35, 70)">✈️ Trip Plan</h1>
+    <a href="/logout" class="logout">Logout</a>
+
+    <button onclick="toggleMode()" style="width:auto;">🌙</button>
+</div>
+<div class="hero">
+    <h1>Plan Your Perfect Trip</h1>
+    <p>Smart travel planning made simple</p>
+</div>
+
+<div class="container">
+
+    <div class="card">
+        <h2>Destination: {{ destination }}</h2>
+        <p><b>Budget:</b> ₹{{ budget }}</p>
+        <p><b>Hotel Category Suitable for Your Budget:</b> {{ hotel_category }}</p>
+        <p><b>Offline Travel Support:</b> 
+            {% if offline_support %}
+                Enabled (Rural Mode)
+            {% else %}
+                Not Required
+            {% endif %}
+            </p>
+
+<p><b>Crowd Preference:</b> {{ crowd }}</p>
+
+        {% if "Budget" in hotel %}
+            <span class="badge green">{{ hotel }}</span>
+        {% elif "Standard" in hotel %}
+            <span class="badge yellow">{{ hotel }}</span>
+        {% else %}
+            <span class="badge red">{{ hotel }}</span>
+        {% endif %}
+
+       <h3>🏨 Nearby Hotels</h3>
+<ul>
+    {% for hotel in hotels %}
+        <li>
+            <b>{{ hotel.name }}</b> – {{ hotel.rate }}
+        </li>
+    {% endfor %}
+</ul>
+<h3>🍽 Nearby Restaurants</h3>
+<ul>
+    {% for restaurant in restaurants %}
+        <li>
+            <b>{{ restaurant.name }}</b> – {{ restaurant.type }}
+        </li>
+    {% endfor %}
+</ul>
+
+<h3>🚕 Local Conveyance</h3>
+<ul>
+    {% for c in conveyance %}
+        <li>
+            <b>{{ c.mode }}</b> – {{ c.rate }}
+        </li>
+    {% endfor %}
+</ul>
+
+
+
+    </div>
+    <div class="card">
+    <h3>🤖 AI Recommendation Reason</h3>
+    <p>{{ reason }}</p>
+
+
+
+
+
+
+
+</div>
+
+    <h2 style="color:darkblue;background-color: antiquewhite;justify-self: left;">🗓️ Day-wise Itinerary</h2>
+
+    <div class="day-grid">
+        {% for day in itinerary %}
+        <div class="day-card">
+            <h3>{{ day.split(':')[0] }}</h3>
+            <p>{{ day.split(':')[1] }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    <br><br>
+
+    <div class="map-box">
+        📍 Google Maps Integration (Future Scope)
+    </div>
+<br>
+    <button onclick="window.location.href='/dashboard'">🔁 Plan Another Trip</button>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="conti">
+    <h1>Admin: All Users & Trips</h1>
+    <p style="text-align:right;"><a href="/dashboard">Back to Dashboard</a></p>
+
+    <h2>Users</h2>
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>ID</th><th>Username</th><th>Role</th><th>Created At</th>
+        </tr>
+        {% for user in users %}
+        <tr>
+            <td>{{ user[0] }}</td>
+            <td>{{ user[1] }}</td>
+            <td>{{ user[2] }}</td>
+            <td>{{ user[3] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2 style="margin-top:30px;">Trips</h2>
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>ID</th><th>Username</th><th>Destination</th><th>Budget</th><th>Days</th><th>Hotel</th><th>Created At</th>
+        </tr>
+        {% for trip in trips %}
+        <tr>
+            <td>{{ trip[0] }}</td>
+            <td>{{ trip[1] }}</td>
+            <td>{{ trip[2] }}</td>
+            <td>{{ trip[3] }}</td>
+            <td>{{ trip[4] }}</td>
+            <td>{{ trip[5] }}</td>
+            <td>{{ trip[6] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+</body>
+</html>
